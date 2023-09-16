@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 import { Request, Response } from "express";
-import { connectToDb } from "../db/conn";
+import { dbConnection } from "../db/conn";
 
 router.get("/", async (req: Request, res: Response) => {
-  const db = await connectToDb();
+  const db = await dbConnection;
   if (!db) {
     res.send("Error connecting to database");
     return;

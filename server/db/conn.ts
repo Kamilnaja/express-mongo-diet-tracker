@@ -26,4 +26,4 @@ async function connectToDb() {
   }
 }
 
-export { connectToDb };
+export const dbConnection = connectToDb();
