@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node -r dotenv/config server/index.ts --inspect",
+    "dev": "esrun -r dotenv/config server/index.ts --inspect",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@digitak/esrun": "^3.2.24",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongodb": "^6.1.0",
