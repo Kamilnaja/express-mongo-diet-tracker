@@ -1,5 +1,6 @@
 import express from "express";
 import "./db/conn";
+import "./db/initialData";
 import "./loadEnvironment";
 import posts from "./routes/posts";
 

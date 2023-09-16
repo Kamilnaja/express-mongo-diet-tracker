@@ -1,17 +1,11 @@
-const express = require("express");
+import express, { Request, Response } from "express";
+import { getCollection } from "../db/conn";
 const router = express.Router();
-import { Request, Response } from "express";
-import { dbConnection } from "../db/conn";
 
 router.get("/", async (req: Request, res: Response) => {
-  const db = await dbConnection;
-  if (!db) {
-    res.send("Error connecting to database");
-    return;
-  }
-  let collection = db.collection("cluster0");
+  let collection = await getCollection("users");
   let results = await collection.find({}).toArray();
-  res.send("Hello World!");
+  res.send(results);
 });
 
 export default router;

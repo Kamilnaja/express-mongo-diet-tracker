@@ -1,4 +1,5 @@
 import { MongoClient } from "mongodb";
+import { assertNonNullish } from "../../helpers/assertNonNullish";
 require("dotenv").config();
 
 const connectionString = process.env.MONGODB_URI || "";
@@ -26,4 +27,15 @@ async function connectToDb() {
   }
 }
 
-export const dbConnection = connectToDb();
+const dbConnection = connectToDb();
+
+async function getCollection(collectionName: string) {
+  const db = await dbConnection;
+
+  assertNonNullish(db, "db is null or undefined");
+
+  const collection = db.collection(collectionName);
+  return collection;
+}
+
+export { getCollection };
