@@ -2,10 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run Backend",
+      "name": "Start Backend",
       "type": "node",
       "request": "launch",
-      "args": ["-r", "tsconfig-paths/register", "server/index.ts"],
+      "args": ["-r", "tsconfig-paths/register" ,"server/index.ts"],
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+      "cwd": "${workspaceFolder}",
       "skipFiles": [
         "<node_internals>/**"
       ],
