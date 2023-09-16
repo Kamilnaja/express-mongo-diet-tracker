@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "esrun -r dotenv/config server/index.ts --inspect",
+    "dev": "ts-node -r dotenv/config server/index.ts --inspect",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
