@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Backend",
+      "type": "node",
+      "request": "launch",
+      "args": ["-r", "tsconfig-paths/register", "server/index.ts"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "sourceMaps": true,
+    }
+  ]
+}
