@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import { Db } from "mongodb";
 import { app } from "..";
+
 const router = express.Router();
 
 router.get("/", (req: Request, res: Response) => {
